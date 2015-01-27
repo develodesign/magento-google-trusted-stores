@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Develo_Googletrustedstores extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Develo
+ * @package        Develo_Googletrustedstores
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+--> 
+<layout>
+    <adminhtml_googletrustedstores_googlemerchentdata_index>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>develo_googletrustedstores/googlemerchentdata</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="develo_googletrustedstores/adminhtml_googlemerchentdata" name="googlemerchentdata" />
+
+        </reference>
+    </adminhtml_googletrustedstores_googlemerchentdata_index>
+    <adminhtml_googletrustedstores_googlemerchentdata_grid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="develo_googletrustedstores/adminhtml_googlemerchentdata_grid" name="googlemerchentdata_grid"/>
+        </block>
+    </adminhtml_googletrustedstores_googlemerchentdata_grid>
+    <!-- Googlemerchentdata add/edit action -->
+    <adminhtml_googletrustedstores_googlemerchentdata_edit>
+        <update handle="editor"/>
+        <reference name="menu">
+            <action method="setActive">
+                <menupath>develo_googletrustedstores/googlemerchentdata</menupath>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="develo_googletrustedstores/adminhtml_googlemerchentdata_edit" name="googlemerchentdata_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="develo_googletrustedstores/adminhtml_googlemerchentdata_edit_tabs" name="googlemerchentdata_tabs"></block>
+        </reference>
+    </adminhtml_googletrustedstores_googlemerchentdata_edit>
+
+</layout>
