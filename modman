@@ -1,4 +1,4 @@
-code                            app/code/community/Develo/Googletrustedreviews/
-admin-design/layout/*           app/design/adminhtml/default/default/layout/
-Develo_Googletrustedstores.xml  app/etc/modules/Develo_Googletrustedreviews.xml
-locale/*                        app/locale
+code                                    app/code/community/Develo/Googletrustedreviews/
+admin-design/layout/*                   app/design/adminhtml/default/default/layout/
+Develo_Googletrustedstores.xml          app/etc/modules/Develo_Googletrustedreviews.xml
+en_US/*                                 app/locale/en_US/
