@@ -23,14 +23,6 @@
         </Develo_Googletrustedstores>
     </modules>
     <global>
-        <resources>
-            <develo_googletrustedstores_setup>
-                <setup>
-                    <module>Develo_Googletrustedstores</module>
-                    <class>Develo_Googletrustedstores_Model_Resource_Setup</class>
-                </setup>
-            </develo_googletrustedstores_setup>
-        </resources>
         <blocks>
             <develo_googletrustedstores>
                 <class>Develo_Googletrustedstores_Block</class>
@@ -59,6 +51,15 @@
             </develo_googletrustedstores_resource>
         </models>
     </global>
+    <frontend>
+        <layout>
+            <updates>
+                <develo_googletrustedstores>
+                    <file>develo_googletrustedstores.xml</file>
+                </develo_googletrustedstores>
+            </updates>
+        </layout>
+    </frontend>
     <adminhtml>
         <layout>
             <updates>
