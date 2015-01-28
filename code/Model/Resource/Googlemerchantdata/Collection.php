@@ -21,7 +21,7 @@
  * @package     Develo_Googletrustedstores
  * @author      Ultimate Module Creator
  */
-class Develo_Googletrustedstores_Model_Resource_Googlemerchentdata_Collection
+class Develo_Googletrustedstores_Model_Resource_Googlemerchantdata_Collection
     extends Mage_Core_Model_Resource_Db_Collection_Abstract {
     protected $_joinedFields = array();
     /**
@@ -32,7 +32,7 @@ class Develo_Googletrustedstores_Model_Resource_Googlemerchentdata_Collection
      */
     protected function _construct(){
         parent::_construct();
-        $this->_init('develo_googletrustedstores/googlemerchentdata');
+        $this->_init('develo_googletrustedstores/googlemerchantdata');
         $this->_map['fields']['store'] = 'store_table.store_id';
     }
     /**
@@ -40,7 +40,7 @@ class Develo_Googletrustedstores_Model_Resource_Googlemerchentdata_Collection
      * @access public
      * @param int|Mage_Core_Model_Store $store
      * @param bool $withAdmin
-     * @return Develo_Googletrustedstores_Model_Resource_Googlemerchentdata_Collection
+     * @return Develo_Googletrustedstores_Model_Resource_Googlemerchantdata_Collection
      * @author Ultimate Module Creator
      */
     public function addStoreFilter($store, $withAdmin = true){
@@ -62,14 +62,14 @@ class Develo_Googletrustedstores_Model_Resource_Googlemerchentdata_Collection
     /**
      * Join store relation table if there is store filter
      * @access protected
-     * @return Develo_Googletrustedstores_Model_Resource_Googlemerchentdata_Collection
+     * @return Develo_Googletrustedstores_Model_Resource_Googlemerchantdata_Collection
      * @author Ultimate Module Creator
      */
     protected function _renderFiltersBefore(){
         if ($this->getFilter('store')) {
             $this->getSelect()->join(
-                array('store_table' => $this->getTable('develo_googletrustedstores/googlemerchentdata_store')),
-                'main_table.entity_id = store_table.googlemerchentdata_id',
+                array('store_table' => $this->getTable('develo_googletrustedstores/googlemerchantdata_store')),
+                'main_table.entity_id = store_table.googlemerchantdata_id',
                 array()
             )->group('main_table.entity_id');
             /*
@@ -80,7 +80,7 @@ class Develo_Googletrustedstores_Model_Resource_Googlemerchentdata_Collection
         return parent::_renderFiltersBefore();
     }
     /**
-     * get googlemerchentdatas as array
+     * get googlemerchantdatas as array
      * @access protected
      * @param string $valueField
      * @param string $labelField

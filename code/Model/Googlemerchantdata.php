@@ -21,25 +21,25 @@
  * @package     Develo_Googletrustedstores
  * @author      Ultimate Module Creator
  */
-class Develo_Googletrustedstores_Model_Googlemerchentdata
+class Develo_Googletrustedstores_Model_Googlemerchantdata
     extends Mage_Core_Model_Abstract {
     /**
      * Entity code.
      * Can be used as part of method name for entity processing
      */
-    const ENTITY    = 'develo_googletrustedstores_googlemerchentdata';
-    const CACHE_TAG = 'develo_googletrustedstores_googlemerchentdata';
+    const ENTITY    = 'develo_googletrustedstores_googlemerchantdata';
+    const CACHE_TAG = 'develo_googletrustedstores_googlemerchantdata';
     /**
      * Prefix of model events names
      * @var string
      */
-    protected $_eventPrefix = 'develo_googletrustedstores_googlemerchentdata';
+    protected $_eventPrefix = 'develo_googletrustedstores_googlemerchantdata';
 
     /**
      * Parameter name in event
      * @var string
      */
-    protected $_eventObject = 'googlemerchentdata';
+    protected $_eventObject = 'googlemerchantdata';
     /**
      * constructor
      * @access public
@@ -48,12 +48,12 @@ class Develo_Googletrustedstores_Model_Googlemerchentdata
      */
     public function _construct(){
         parent::_construct();
-        $this->_init('develo_googletrustedstores/googlemerchentdata');
+        $this->_init('develo_googletrustedstores/googlemerchantdata');
     }
     /**
-     * before save google merchent information
+     * before save google merchant information
      * @access protected
-     * @return Develo_Googletrustedstores_Model_Googlemerchentdata
+     * @return Develo_Googletrustedstores_Model_Googlemerchantdata
      * @author Ultimate Module Creator
      */
     protected function _beforeSave(){
@@ -66,9 +66,9 @@ class Develo_Googletrustedstores_Model_Googlemerchentdata
         return $this;
     }
     /**
-     * save googlemerchentdata relation
+     * save googlemerchantdata relation
      * @access public
-     * @return Develo_Googletrustedstores_Model_Googlemerchentdata
+     * @return Develo_Googletrustedstores_Model_Googlemerchantdata
      * @author Ultimate Module Creator
      */
     protected function _afterSave() {

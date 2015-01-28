@@ -21,7 +21,7 @@
  * @package     Develo_Googletrustedstores
  * @author      Ultimate Module Creator
  */
-class Develo_Googletrustedstores_Model_Resource_Googlemerchentdata
+class Develo_Googletrustedstores_Model_Resource_Googlemerchantdata
     extends Mage_Core_Model_Resource_Db_Abstract {
     /**
      * constructor
@@ -29,27 +29,27 @@ class Develo_Googletrustedstores_Model_Resource_Googlemerchentdata
      * @author Ultimate Module Creator
      */
     public function _construct(){
-        $this->_init('develo_googletrustedstores/googlemerchentdata', 'entity_id');
+        $this->_init('develo_googletrustedstores/googlemerchantdata', 'entity_id');
     }
     /**
      * Get store ids to which specified item is assigned
      * @access public
-     * @param int $googlemerchentdataId
+     * @param int $googlemerchantdataId
      * @return array
      * @author Ultimate Module Creator
      */
-    public function lookupStoreIds($googlemerchentdataId){
+    public function lookupStoreIds($googlemerchantdataId){
         $adapter = $this->_getReadAdapter();
         $select  = $adapter->select()
-            ->from($this->getTable('develo_googletrustedstores/googlemerchentdata_store'), 'store_id')
-            ->where('googlemerchentdata_id = ?',(int)$googlemerchentdataId);
+            ->from($this->getTable('develo_googletrustedstores/googlemerchantdata_store'), 'store_id')
+            ->where('googlemerchantdata_id = ?',(int)$googlemerchantdataId);
         return $adapter->fetchCol($select);
     }
     /**
      * Perform operations after object load
      * @access public
      * @param Mage_Core_Model_Abstract $object
-     * @return Develo_Googletrustedstores_Model_Resource_Googlemerchentdata
+     * @return Develo_Googletrustedstores_Model_Resource_Googlemerchantdata
      * @author Ultimate Module Creator
      */
     protected function _afterLoad(Mage_Core_Model_Abstract $object){
@@ -65,7 +65,7 @@ class Develo_Googletrustedstores_Model_Resource_Googlemerchentdata
      *
      * @param string $field
      * @param mixed $value
-     * @param Develo_Googletrustedstores_Model_Googlemerchentdata $object
+     * @param Develo_Googletrustedstores_Model_Googlemerchantdata $object
      * @return Zend_Db_Select
      */
     protected function _getLoadSelect($field, $value, $object){
@@ -73,21 +73,21 @@ class Develo_Googletrustedstores_Model_Resource_Googlemerchentdata
         if ($object->getStoreId()) {
             $storeIds = array(Mage_Core_Model_App::ADMIN_STORE_ID, (int)$object->getStoreId());
             $select->join(
-                array('googletrustedstores_googlemerchentdata_store' => $this->getTable('develo_googletrustedstores/googlemerchentdata_store')),
-                $this->getMainTable() . '.entity_id = googletrustedstores_googlemerchentdata_store.googlemerchentdata_id',
+                array('googletrustedstores_googlemerchantdata_store' => $this->getTable('develo_googletrustedstores/googlemerchantdata_store')),
+                $this->getMainTable() . '.entity_id = googletrustedstores_googlemerchantdata_store.googlemerchantdata_id',
                 array()
             )
-            ->where('googletrustedstores_googlemerchentdata_store.store_id IN (?)', $storeIds)
-            ->order('googletrustedstores_googlemerchentdata_store.store_id DESC')
+            ->where('googletrustedstores_googlemerchantdata_store.store_id IN (?)', $storeIds)
+            ->order('googletrustedstores_googlemerchantdata_store.store_id DESC')
             ->limit(1);
         }
         return $select;
     }
     /**
-     * Assign google merchent information to store views
+     * Assign google merchant information to store views
      * @access protected
      * @param Mage_Core_Model_Abstract $object
-     * @return Develo_Googletrustedstores_Model_Resource_Googlemerchentdata
+     * @return Develo_Googletrustedstores_Model_Resource_Googlemerchantdata
      * @author Ultimate Module Creator
      */
     protected function _afterSave(Mage_Core_Model_Abstract $object){
@@ -96,12 +96,12 @@ class Develo_Googletrustedstores_Model_Resource_Googlemerchentdata
         if (empty($newStores)) {
             $newStores = (array)$object->getStoreId();
         }
-        $table  = $this->getTable('develo_googletrustedstores/googlemerchentdata_store');
+        $table  = $this->getTable('develo_googletrustedstores/googlemerchantdata_store');
         $insert = array_diff($newStores, $oldStores);
         $delete = array_diff($oldStores, $newStores);
         if ($delete) {
             $where = array(
-                'googlemerchentdata_id = ?' => (int) $object->getId(),
+                'googlemerchantdata_id = ?' => (int) $object->getId(),
                 'store_id IN (?)' => $delete
             );
             $this->_getWriteAdapter()->delete($table, $where);
@@ -110,7 +110,7 @@ class Develo_Googletrustedstores_Model_Resource_Googlemerchentdata
             $data = array();
             foreach ($insert as $storeId) {
                 $data[] = array(
-                    'googlemerchentdata_id'  => (int) $object->getId(),
+                    'googlemerchantdata_id'  => (int) $object->getId(),
                     'store_id' => (int) $storeId
                 );
             }

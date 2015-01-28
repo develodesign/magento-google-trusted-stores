@@ -49,12 +49,12 @@
             <develo_googletrustedstores_resource>
                 <class>Develo_Googletrustedstores_Model_Resource</class>
                 <entities>
-                    <googlemerchentdata>
-                        <table>develo_googletrustedstores_googlemerchentdata</table>
-                    </googlemerchentdata>
-                    <googlemerchentdata_store>
-                        <table>develo_googletrustedstores_googlemerchentdata_store</table>
-                    </googlemerchentdata_store>
+                    <googlemerchantdata>
+                        <table>develo_googletrustedstores_googlemerchantdata</table>
+                    </googlemerchantdata>
+                    <googlemerchantdata_store>
+                        <table>develo_googletrustedstores_googlemerchantdata_store</table>
+                    </googlemerchantdata_store>
                 </entities>
             </develo_googletrustedstores_resource>
         </models>
@@ -77,10 +77,10 @@
             </modules>
         </translate>
         <global_search>
-            <googlemerchentdata>
-                <class>develo_googletrustedstores/adminhtml_search_googlemerchentdata</class>
+            <googlemerchantdata>
+                <class>develo_googletrustedstores/adminhtml_search_googlemerchantdata</class>
                 <acl>develo_googletrustedstores</acl>
-            </googlemerchentdata>
+            </googlemerchantdata>
         </global_search>
     </adminhtml>
     <admin>

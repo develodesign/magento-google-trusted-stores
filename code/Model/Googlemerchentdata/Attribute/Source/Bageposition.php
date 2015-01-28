@@ -21,7 +21,7 @@
  * @package     Develo_Googletrustedstores
  * @author      Ultimate Module Creator
  */
-class Develo_Googletrustedstores_Model_Googlemerchentdata_Attribute_Source_Bageposition
+class Develo_Googletrustedstores_Model_Googlemerchantdata_Attribute_Source_Bageposition
     extends Mage_Eav_Model_Entity_Attribute_Source_Table {
     /**
      * get possible values
@@ -38,13 +38,11 @@ class Develo_Googletrustedstores_Model_Googlemerchentdata_Attribute_Source_Bagep
                 'value' => 1
             ),
             array(
-                'label' => Mage::helper('develo_googletrustedstores')->__('
-BOTTOM_LEFT'),
+                'label' => Mage::helper('develo_googletrustedstores')->__('BOTTOM_LEFT'),
                 'value' => 2
             ),
             array(
-                'label' => Mage::helper('develo_googletrustedstores')->__('
-USER_DEFINED'),
+                'label' => Mage::helper('develo_googletrustedstores')->__('USER_DEFINED'),
                 'value' => 3
             ),
         );

@@ -15,13 +15,13 @@
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
- * Google Merchent Information admin grid block
+ * Google Merchant Information admin grid block
  *
  * @category    Develo
  * @package     Develo_Googletrustedstores
  * @author      Ultimate Module Creator
  */
-class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
+class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchantdata_Grid
     extends Mage_Adminhtml_Block_Widget_Grid {
     /**
      * constructor
@@ -30,7 +30,7 @@ class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
      */
     public function __construct(){
         parent::__construct();
-        $this->setId('googlemerchentdataGrid');
+        $this->setId('googlemerchantdataGrid');
         $this->setDefaultSort('entity_id');
         $this->setDefaultDir('ASC');
         $this->setSaveParametersInSession(true);
@@ -39,18 +39,18 @@ class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
     /**
      * prepare collection
      * @access protected
-     * @return Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
+     * @return Develo_Googletrustedstores_Block_Adminhtml_Googlemerchantdata_Grid
      * @author Ultimate Module Creator
      */
     protected function _prepareCollection(){
-        $collection = Mage::getModel('develo_googletrustedstores/googlemerchentdata')->getCollection();
+        $collection = Mage::getModel('develo_googletrustedstores/googlemerchantdata')->getCollection();
         $this->setCollection($collection);
         return parent::_prepareCollection();
     }
     /**
      * prepare grid collection
      * @access protected
-     * @return Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
+     * @return Develo_Googletrustedstores_Block_Adminhtml_Googlemerchantdata_Grid
      * @author Ultimate Module Creator
      */
     protected function _prepareColumns(){
@@ -77,7 +77,7 @@ class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
             'header'=> Mage::helper('develo_googletrustedstores')->__('Badge Position'),
             'index' => 'bage_position',
             'type'  => 'options',
-            'options' => Mage::helper('develo_googletrustedstores')->convertOptions(Mage::getModel('develo_googletrustedstores/googlemerchentdata_attribute_source_bageposition')->getAllOptions(false))
+            'options' => Mage::helper('develo_googletrustedstores')->convertOptions(Mage::getModel('develo_googletrustedstores/googlemerchantdata_attribute_source_bageposition')->getAllOptions(false))
 
         ));
         $this->addColumn('badge_container', array(
@@ -164,12 +164,12 @@ class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
     /**
      * prepare mass action
      * @access protected
-     * @return Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
+     * @return Develo_Googletrustedstores_Block_Adminhtml_Googlemerchantdata_Grid
      * @author Ultimate Module Creator
      */
     protected function _prepareMassaction(){
         $this->setMassactionIdField('entity_id');
-        $this->getMassactionBlock()->setFormFieldName('googlemerchentdata');
+        $this->getMassactionBlock()->setFormFieldName('googlemerchantdata');
         $this->getMassactionBlock()->addItem('delete', array(
             'label'=> Mage::helper('develo_googletrustedstores')->__('Delete'),
             'url'  => $this->getUrl('*/*/massDelete'),
@@ -200,7 +200,7 @@ class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
                         'type' => 'select',
                         'class' => 'required-entry',
                         'label' => Mage::helper('develo_googletrustedstores')->__('Badge Position'),
-                        'values' => Mage::getModel('develo_googletrustedstores/googlemerchentdata_attribute_source_bageposition')->getAllOptions(true),
+                        'values' => Mage::getModel('develo_googletrustedstores/googlemerchantdata_attribute_source_bageposition')->getAllOptions(true),
 
                 )
             )
@@ -210,7 +210,7 @@ class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
     /**
      * get the row url
      * @access public
-     * @param Develo_Googletrustedstores_Model_Googlemerchentdata
+     * @param Develo_Googletrustedstores_Model_Googlemerchantdata
      * @return string
      * @author Ultimate Module Creator
      */
@@ -229,7 +229,7 @@ class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
     /**
      * after collection load
      * @access protected
-     * @return Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
+     * @return Develo_Googletrustedstores_Block_Adminhtml_Googlemerchantdata_Grid
      * @author Ultimate Module Creator
      */
     protected function _afterLoadCollection(){
@@ -239,9 +239,9 @@ class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
     /**
      * filter store column
      * @access protected
-     * @param Develo_Googletrustedstores_Model_Resource_Googlemerchentdata_Collection $collection
+     * @param Develo_Googletrustedstores_Model_Resource_Googlemerchantdata_Collection $collection
      * @param Mage_Adminhtml_Block_Widget_Grid_Column $column
-     * @return Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Grid
+     * @return Develo_Googletrustedstores_Block_Adminhtml_Googlemerchantdata_Grid
      * @author Ultimate Module Creator
      */
     protected function _filterStoreCondition($collection, $column){

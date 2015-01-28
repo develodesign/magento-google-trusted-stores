@@ -23,12 +23,12 @@
  */
 
 
-class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Edit_Form
+class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchantdata_Edit_Form
     extends Mage_Adminhtml_Block_Widget_Form {
     /**
      * prepare form
      * @access protected
-     * @return Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Edit_Form
+     * @return Develo_Googletrustedstores_Block_Adminhtml_Googlemerchantdata_Edit_Form
      * @author Ultimate Module Creator
      */
     protected function _prepareForm() {

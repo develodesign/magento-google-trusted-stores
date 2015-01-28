@@ -15,26 +15,26 @@
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 /**
- * Google Merchent Information edit form tab
+ * Google Merchant Information edit form tab
  *
  * @category    Develo
  * @package     Develo_Googletrustedstores
  * @author      Ultimate Module Creator
  */
-class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Edit_Tab_Form
+class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchantdata_Edit_Tab_Form
     extends Mage_Adminhtml_Block_Widget_Form {
     /**
      * prepare the form
      * @access protected
-     * @return Googletrustedstores_Googlemerchentdata_Block_Adminhtml_Googlemerchentdata_Edit_Tab_Form
+     * @return Googletrustedstores_Googlemerchantdata_Block_Adminhtml_Googlemerchantdata_Edit_Tab_Form
      * @author Ultimate Module Creator
      */
     protected function _prepareForm(){
         $form = new Varien_Data_Form();
-        $form->setHtmlIdPrefix('googlemerchentdata_');
-        $form->setFieldNameSuffix('googlemerchentdata');
+        $form->setHtmlIdPrefix('googlemerchantdata_');
+        $form->setFieldNameSuffix('googlemerchantdata');
         $this->setForm($form);
-        $fieldset = $form->addFieldset('googlemerchentdata_form', array('legend'=>Mage::helper('develo_googletrustedstores')->__('Google Merchent Information')));
+        $fieldset = $form->addFieldset('googlemerchantdata_form', array('legend'=>Mage::helper('develo_googletrustedstores')->__('Google Merchant Information')));
 
         $fieldset->addField('store_id', 'text', array(
             'label' => Mage::helper('develo_googletrustedstores')->__('Google Trusted Stores Id'),
@@ -50,7 +50,7 @@ class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Edit_Tab_For
             'required'  => true,
             'class' => 'required-entry',
 
-            'values'=> Mage::getModel('develo_googletrustedstores/googlemerchentdata_attribute_source_bageposition')->getAllOptions(true),
+            'values'=> Mage::getModel('develo_googletrustedstores/googlemerchantdata_attribute_source_bageposition')->getAllOptions(true),
         ));
 
         $fieldset->addField('badge_container', 'text', array(
@@ -115,18 +115,18 @@ class Develo_Googletrustedstores_Block_Adminhtml_Googlemerchentdata_Edit_Tab_For
                 'name'      => 'stores[]',
                 'value'     => Mage::app()->getStore(true)->getId()
             ));
-            Mage::registry('current_googlemerchentdata')->setStoreId(Mage::app()->getStore(true)->getId());
+            Mage::registry('current_googlemerchantdata')->setStoreId(Mage::app()->getStore(true)->getId());
         }
-        $formValues = Mage::registry('current_googlemerchentdata')->getDefaultValues();
+        $formValues = Mage::registry('current_googlemerchantdata')->getDefaultValues();
         if (!is_array($formValues)){
             $formValues = array();
         }
-        if (Mage::getSingleton('adminhtml/session')->getGooglemerchentdataData()){
-            $formValues = array_merge($formValues, Mage::getSingleton('adminhtml/session')->getGooglemerchentdataData());
-            Mage::getSingleton('adminhtml/session')->setGooglemerchentdataData(null);
+        if (Mage::getSingleton('adminhtml/session')->getGooglemerchantdataData()){
+            $formValues = array_merge($formValues, Mage::getSingleton('adminhtml/session')->getGooglemerchantdataData());
+            Mage::getSingleton('adminhtml/session')->setGooglemerchantdataData(null);
         }
-        elseif (Mage::registry('current_googlemerchentdata')){
-            $formValues = array_merge($formValues, Mage::registry('current_googlemerchentdata')->getData());
+        elseif (Mage::registry('current_googlemerchantdata')){
+            $formValues = array_merge($formValues, Mage::registry('current_googlemerchantdata')->getData());
         }
         $form->setValues($formValues);
         return parent::_prepareForm();

@@ -35,10 +35,10 @@
                     <develo_googletrustedstores translate="title" module="develo_googletrustedstores">
                         <title>Google Trusted Stores</title>
                             <children>
-                                <googlemerchentdata translate="title" module="develo_googletrustedstores">
-                                    <title>Google Merchent Information</title>
+                                <googlemerchantdata translate="title" module="develo_googletrustedstores">
+                                    <title>Google Merchant Information</title>
                                     <sort_order>0</sort_order>
-                                </googlemerchentdata>
+                                </googlemerchantdata>
                             </children>
                         </develo_googletrustedstores>
 
@@ -51,11 +51,11 @@
             <title>Google Trusted Stores</title>
             <sort_order>75</sort_order>
             <children>
-                <googlemerchentdata translate="title" module="develo_googletrustedstores">
-                    <title>Google Merchent Information</title>
-                    <action>adminhtml/googletrustedstores_googlemerchentdata</action>
+                <googlemerchantdata translate="title" module="develo_googletrustedstores">
+                    <title>Google Merchant Information</title>
+                    <action>adminhtml/googletrustedstores_googlemerchantdata</action>
                     <sort_order>0</sort_order>
-                </googlemerchentdata>
+                </googlemerchantdata>
             </children>
         </develo_googletrustedstores>
 
