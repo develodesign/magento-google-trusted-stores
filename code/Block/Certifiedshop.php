@@ -15,7 +15,7 @@
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 
-class Develo_Googletrustedstores_Certifiedshop extends Mage_Core_Block_Template
+class Develo_Googletrustedstores_Block_Certifiedshop extends Mage_Core_Block_Template
 {
     private $_merchantData = 'develo_googletrustedstores/merchant_data/';
 
