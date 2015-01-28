@@ -1,0 +1,51 @@
+<?php
+/**
+ * Develo_Googletrustedstores extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ *
+ * @category       Develo
+ * @package        Develo_Googletrustedstores
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+?>
+<!-- BEGIN: Google Certified Shops -->
+<script type="text/javascript">
+
+    var gts = gts || [];
+
+    gts.push( ['id', '<?php echo $this->getStoreId() ?>'] );
+
+    gts.push( ['badge_position', '<?php echo $this->getBadgePosition() ?>'] );
+
+    <?php if( $this->requiresBadgeContainer() ) : ?>
+        gts.push( ['badge_container', '<?php echo $this->getBadgeContainer() ?>'] );
+    <?php endif; ?>
+
+    gts.push( ['locale', '<?php echo $this->getLocale() ?>'] );
+
+    gts.push( ['google_base_offer_id', '<?php echo $this->getGoogleBaseOfferId() ?>'] );
+
+    gts.push( ['google_base_subaccount_id', '<?php echo $this->getGoogleBaseSubaccountId() ?>'] );
+
+    gts.push( ['google_base_country', '<?php echo $this->getGoogleBaseCountry() ?>'] );
+
+    gts.push( ['google_base_language', '<?php echo $this->getGoogleBaseLanguage() ?>'] );
+
+    (function() {
+        var gts = document.createElement('script');
+        gts.type = 'text/javascript';
+        gts.async = true;
+        gts.src = 'https://www.googlecommerce.com/trustedstores/api/js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gts, s);
+    })();
+
+</script>
+<!-- END: Google Certified Shops -->

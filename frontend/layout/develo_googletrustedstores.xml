@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Develo_Googletrustedstores extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ *
+ * @category       Develo
+ * @package        Develo_Googletrustedstores
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<layout>
+	<default>
+		<reference name="before_body_end">
+			<block type="develo_googletrustedstores/certfiedshop" name="googletrustedstores.certifiedshop" as="googletrustedstores.certifiedshop" template="develo_googletrustedstores/certified-shop.phtml"/>
+		</reference>
+	</default>
+</layout>
