@@ -28,7 +28,7 @@ $table = $this->getConnection()
         'identity'  => true,
         'nullable'  => false,
         'primary'   => true,
-        ), 'Google Merchent Information ID')
+        ), 'Google Merchant Information ID')
     ->addColumn('store_id', Varien_Db_Ddl_Table::TYPE_TEXT, 255, array(
         'nullable'  => false,
         ), 'Google Trusted Stores Id')
@@ -60,19 +60,19 @@ $table = $this->getConnection()
         ), 'Enabled')
 
      ->addColumn('status', Varien_Db_Ddl_Table::TYPE_INTEGER, null, array(
-        ), 'Google Merchent Information Status')
+        ), 'Google Merchant Information Status')
     ->addColumn('updated_at', Varien_Db_Ddl_Table::TYPE_TIMESTAMP, null, array(
-            ), 'Google Merchent Information Modification Time')
+            ), 'Google Merchant Information Modification Time')
     ->addColumn('created_at', Varien_Db_Ddl_Table::TYPE_TIMESTAMP, null, array(
-        ), 'Google Merchent Information Creation Time') 
-    ->setComment('Google Merchent Information Table');
+        ), 'Google Merchant Information Creation Time')
+    ->setComment('Google Merchant Information Table');
 $this->getConnection()->createTable($table);
 $table = $this->getConnection()
     ->newTable($this->getTable('develo_googletrustedstores/googlemerchantdata_store'))
     ->addColumn('googlemerchantdata_id', Varien_Db_Ddl_Table::TYPE_SMALLINT, null, array(
         'nullable'  => false,
         'primary'   => true,
-        ), 'Google Merchent Information ID')
+        ), 'Google Merchant Information ID')
     ->addColumn('store_id', Varien_Db_Ddl_Table::TYPE_SMALLINT, null, array(
         'unsigned'  => true,
         'nullable'  => false,
@@ -81,6 +81,6 @@ $table = $this->getConnection()
     ->addIndex($this->getIdxName('develo_googletrustedstores/googlemerchantdata_store', array('store_id')), array('store_id'))
     ->addForeignKey($this->getFkName('develo_googletrustedstores/googlemerchantdata_store', 'googlemerchantdata_id', 'develo_googletrustedstores/googlemerchantdata', 'entity_id'), 'googlemerchantdata_id', $this->getTable('develo_googletrustedstores/googlemerchantdata'), 'entity_id', Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
     ->addForeignKey($this->getFkName('develo_googletrustedstores/googlemerchantdata_store', 'store_id', 'core/store', 'store_id'), 'store_id', $this->getTable('core/store'), 'store_id', Varien_Db_Ddl_Table::ACTION_CASCADE, Varien_Db_Ddl_Table::ACTION_CASCADE)
-    ->setComment('Google Merchent Information To Store Linkage Table');
+    ->setComment('Google Merchant Information To Store Linkage Table');
 $this->getConnection()->createTable($table);
 $this->endSetup();
