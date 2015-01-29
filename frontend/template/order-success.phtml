@@ -1,0 +1,73 @@
+<?php
+/**
+ * Develo_Googletrustedstores extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ *
+ * @category       Develo
+ * @package        Develo_Googletrustedstores
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+?>
+<!-- START Google Certified Shops Order -->
+<div id="gts-order" style="display:none;" translate="no">
+
+    <!-- start order and merchant information -->
+    <span id="gts-o-id"><?php echo $this->escapeHtml( $this->getOrderId() ) ?></span>
+    <span id="gts-o-domain"><?php echo $this->getMerchantOrderDomain() ?></span>
+
+    <span id="gts-o-email"><?php echo $this->escapeHtml( $this->order->getCustomerEmail() );?></span>
+    <span id="gts-o-country"><?php echo $this->escapeHtml( $this->getCustomerCountry() ) ?></span>
+    <span id="gts-o-currency"><?php echo $this->getCurrency() ?></span>
+    <span id="gts-o-total"><?php echo $this->getOrderTotal() ?></span>
+    <span id="gts-o-discounts"><?php echo $this->getOrderDiscounts() ?></span>
+    <span id="gts-o-shipping-total"><?php echo $this->getOrderShipping() ?></span>
+    <span id="gts-o-tax-total"><?php echo $this->getOrderTax() ?></span>
+
+    <span id="gts-o-est-ship-date"><?php echo $this->getEstimatedShippingDate() ?></span>
+    <span id="gts-o-est-delivery-date"><?php echo $this->getEstimatedDeliveryDate() ?></span>
+
+    <span id="gts-o-has-preorder"><?php echo $this->doesOrderContainBackOrder() ? 'Y' : 'N' ?></span>
+    <span id="gts-o-has-digital"><?php echo $this->doesOrderContainDigitalProducts() ? 'Y' : 'N' ?></span>
+    <!-- end order and merchant information -->
+
+    <!-- start repeated item specific information -->
+    <?php foreach( $this->getOrderItems() as $key => $item ) : ?>
+
+        <!-- item example: this area repeated for each item in the order -->
+        <span class="gts-item">
+
+            <span class="gts-i-name"><?php echo $this->escapeHtml( $item->getName() ) ?></span>
+            <span class="gts-i-price"><?php echo $this->getPriceForItem( $item ) ?></span>
+            <span class="gts-i-quantity"><?php echo $this->escapeHtml( $item->getQtyToInvoice() ) ?></span>
+
+            <?php if( $this->getItemGoogleShoppingId() ) : ?>
+                <span class="gts-i-prodsearch-id"><?php echo $this->escapeHtml( $this->getItemGoogleShoppingId() ) ?></span>
+            <?php endif; ?>
+
+            <?php if( $this->getItemGoogleShoppingAccountId() ) : ?>
+                <span class="gts-i-prodsearch-store-id"><?php echo $this->escapeHtml( $this->getItemGoogleShoppingAccountId() ) ?></span>
+            <?php endif; ?>
+
+            <?php if( $this->getItemGoogleShoppingCountry() ) : ?>
+                <span class="gts-i-prodsearch-country"><?php echo $this->escapeHtml( $this->getItemGoogleShoppingCountry() ) ?></span>
+            <?php endif; ?>
+
+            <?php if( $this->getItemGoogleShoppingLanguage() ) : ?>
+                <span class="gts-i-prodsearch-language"><?php echo $this->escapeHtml( $this->getItemGoogleShoppingLanguage() ) ?></span>
+            <?php endif; ?>
+
+        </span>
+        <!-- end item <?php echo $key + 1 ?> example -->
+
+    <?php endforeach; ?>
+    <!-- end repeated item specific information -->
+
+</div>
+<!-- END Google Certified Shops Order -->
