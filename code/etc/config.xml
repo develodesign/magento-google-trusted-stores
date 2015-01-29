@@ -61,6 +61,25 @@
         </layout>
     </frontend>
     <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <develo_googletrustedstores>
+                                            <title>Google Trusted Reviews</title>
+                                        </develo_googletrustedstores>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
         <layout>
             <updates>
                 <develo_googletrustedstores>
