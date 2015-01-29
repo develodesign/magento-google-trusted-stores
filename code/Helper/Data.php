@@ -21,8 +21,8 @@
  * @package     Develo_Googletrustedstores
  * @author      Ultimate Module Creator
  */
-class Develo_Googletrustedstores_Helper_Data
-    extends Mage_Core_Helper_Abstract {
+class Develo_Googletrustedstores_Helper_Data extends Mage_Core_Helper_Abstract
+{
     /**
      * convert array to options
      * @access public
