@@ -22,4 +22,9 @@
 			<block type="develo_googletrustedstores/certifiedshop" name="certified_shop" as="certified_shop" template="develo-googletrustedstores/certified-shop.phtml" />
 		</reference>
 	</default>
+	<checkout_onepage_success>
+		<reference name="before_body_end">
+			<block type="develo_googletrustedstores/ordercomplete" name="trusted_stores_order" as="trusted_stores_order" template="develo-googletrustedstores/order-success.phtml" />
+		</reference>
+	</checkout_onepage_success>
 </layout>

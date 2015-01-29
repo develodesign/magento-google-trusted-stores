@@ -15,9 +15,8 @@
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
 
-class Develo_Googletrustedstores_Block_Certifiedshop extends Mage_Core_Block_Template
+class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletrustedstores_Block_Template
 {
-    private $_merchantData = 'develo_googletrustedstores/merchant_data/';
 
     private $_badgePositionRequiresContainer = 'USER_DEFINED';
 
@@ -87,7 +86,7 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Mage_Core_Block_Tem
      */
     public function getGoogleBaseOfferId()
     {
-        return Mage::getStoreConfig( $this->_merchantData . 'google_base_offer_id' );
+        return $this->getItemGoogleShoppingId();
     }
 
     /**
@@ -97,7 +96,7 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Mage_Core_Block_Tem
      */
     public function getGoogleBaseSubaccountId()
     {
-        return Mage::getStoreConfig( $this->_merchantData . 'google_base_subaccount_id' );
+        return $this->getItemGoogleShoppingAccountId();
     }
 
     /**
@@ -107,7 +106,7 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Mage_Core_Block_Tem
      */
     public function getGoogleBaseCountry()
     {
-        return Mage::getStoreConfig( $this->_merchantData . 'google_base_country' );
+        return $this->getItemGoogleShoppingCountry();
     }
 
     /**
@@ -115,7 +114,7 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Mage_Core_Block_Tem
      */
     public function getGoogleBaseLanguage()
     {
-        return Mage::getStoreConfig( $this->_merchantData . 'google_base_language' );
+        return $this->getItemGoogleShoppingLanguage();
     }
 
 }
