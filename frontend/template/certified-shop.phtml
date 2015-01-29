@@ -20,23 +20,23 @@
 
     var gts = gts || [];
 
-    gts.push( ['id', '<?php echo $this->getStoreId() ?>'] );
+    gts.push( ['id', '<?php echo $this->escapeHtml( $this->getStoreId() ) ?>'] );
 
-    gts.push( ['badge_position', '<?php echo $this->getBadgePosition() ?>'] );
+    gts.push( ['badge_position', '<?php echo $this->escapeHtml( $this->getBadgePosition() ) ?>'] );
 
     <?php if( $this->requiresBadgeContainer() ) : ?>
-        gts.push( ['badge_container', '<?php echo $this->getBadgeContainer() ?>'] );
+        gts.push( ['badge_container', '<?php echo $this->escapeHtml( $this->getBadgeContainer() ) ?>'] );
     <?php endif; ?>
 
     gts.push( ['locale', '<?php echo $this->getLocale() ?>'] );
 
-    gts.push( ['google_base_offer_id', '<?php echo $this->getGoogleBaseOfferId() ?>'] );
+    gts.push( ['google_base_offer_id', '<?php echo $this->escapeHtml( $this->getGoogleBaseOfferId() ) ?>'] );
 
-    gts.push( ['google_base_subaccount_id', '<?php echo $this->getGoogleBaseSubaccountId() ?>'] );
+    gts.push( ['google_base_subaccount_id', '<?php echo $this->escapeHtml( $this->getGoogleBaseSubaccountId() ) ?>'] );
 
-    gts.push( ['google_base_country', '<?php echo $this->getGoogleBaseCountry() ?>'] );
+    gts.push( ['google_base_country', '<?php echo $this->escapeHtml( $this->getGoogleBaseCountry() ) ?>'] );
 
-    gts.push( ['google_base_language', '<?php echo $this->getGoogleBaseLanguage() ?>'] );
+    gts.push( ['google_base_language', '<?php echo $this->escapeHtml( $this->getGoogleBaseLanguage() ) ?>'] );
 
     (function() {
         var gts = document.createElement('script');
