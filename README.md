@@ -11,17 +11,17 @@ For more information on [Google Trusted Stores see their website](http://www.goo
 
 ### With Symlinks
 1. Initialise modman
-```
-modman init
-```
+    ```
+    modman init
+    ```
 2. Install this module
-```
-modman clone https://github.com/develodesign/magento-google-trusted-stores.git
-```
+    ```
+    modman clone https://github.com/develodesign/magento-google-trusted-stores.git
+    ```
 3. Ensure your Magento installation will allow you to use symlinks. Check your system config settings:
-```
-Advanced > Developer > Template Settings > Allow Symlinks
-```
+    ```
+    Advanced > Developer > Template Settings > Allow Symlinks
+    ```
 ### Without Symlinks
 1. Initialise modman
 ```
