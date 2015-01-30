@@ -22,23 +22,24 @@ For more information on [Google Trusted Stores see their website](http://www.goo
     ```
     Advanced > Developer > Template Settings > Allow Symlinks
     ```
+
 ### Without Symlinks
 1. Initialise modman
-```
-modman init
-```
+    ```
+    modman init
+    ```
 2. Install this module
-```
-modman clone https://github.com/develodesign/magento-google-trusted-stores.git
-```
+    ```
+    modman clone https://github.com/develodesign/magento-google-trusted-stores.git
+    ```
 3. Copy the module to the correct Magento directories.
-```
-modman deploy magento-google-trusted-stores --copy
-```
+    ```
+    modman deploy magento-google-trusted-stores --copy
+    ```
 ## Setup Instructions
 1. Login to your Magento admin panel.
 2. Access the modules configuration settings.
-```
-System > Configuration > Develo > Google Trusted Stores
-```
+    ```
+    System > Configuration > Develo > Google Trusted Stores
+    ```
 3. The only required settings for the extension to work is the Store Id and Badge Position. Badge Position will default to bottom right.
