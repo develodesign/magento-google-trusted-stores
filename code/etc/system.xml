@@ -11,7 +11,7 @@
 	<sections>
 		<develo_googletrustedstores translate="label" module="develo_googletrustedstores">
 			<class>separator-top</class>
-			<label>Google Trusted Reviews</label>
+			<label>Google Trusted Stores</label>
 			<tab>develo</tab>
 			<frontend_type>text</frontend_type>
 			<sort_order>50</sort_order>
