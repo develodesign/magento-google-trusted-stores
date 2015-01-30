@@ -1,5 +1,5 @@
 # Magento Google Trusted Stores
-A simple Google Trusted Stores integration for use with Magento.
+A simple Google Trusted Stores integration for use with Magento made by [Develo Design](http://develodesign.co.uk).
 
 ## What is Google Trusted Stores?
 For more information on [Google Trusted Stores see their website](http://www.google.com/trustedstores/for-businesses/).
@@ -36,6 +36,7 @@ For more information on [Google Trusted Stores see their website](http://www.goo
     ```
     modman deploy magento-google-trusted-stores --copy
     ```
+
 ## Setup Instructions
 1. Login to your Magento admin panel.
 2. Access the modules configuration settings.
@@ -43,3 +44,7 @@ For more information on [Google Trusted Stores see their website](http://www.goo
     System > Configuration > Develo > Google Trusted Stores
     ```
 3. The only required settings for the extension to work is the Store Id and Badge Position. Badge Position will default to bottom right.
+
+
+## Reference
+- [Modman Wiki](https://github.com/colinmollenhour/modman/wiki/Tutorial)
