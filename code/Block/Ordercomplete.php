@@ -23,8 +23,6 @@ class Develo_Googletrustedstores_Block_Ordercomplete extends Develo_Googletruste
 
     private $_hasBackOrder = false;
 
-    private $_discount = 0;
-
     public $order;
 
     /**
@@ -44,7 +42,6 @@ class Develo_Googletrustedstores_Block_Ordercomplete extends Develo_Googletruste
      * Spin through all the order items and work out if:
      * - The order contains digital products.
      * - The order contains an item which is on back order.
-     * - The amount discounted.
      */
     private function _prepareOrderData()
     {
@@ -55,8 +52,6 @@ class Develo_Googletrustedstores_Block_Ordercomplete extends Develo_Googletruste
 
             if( $item->getQtyBackordered() )
                 $this->_hasBackOrder = true;
-
-            //$this->_discount = $this->_discount + $this->getDiscountAmount();
         }
     }
 
