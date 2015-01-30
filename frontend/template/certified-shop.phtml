@@ -30,9 +30,13 @@
 
     gts.push( ['locale', '<?php echo $this->getLocale() ?>'] );
 
-    gts.push( ['google_base_offer_id', '<?php echo $this->escapeHtml( $this->getGoogleBaseOfferId() ) ?>'] );
+    <?php if( $this->getGoogleBaseOfferId() ) : ?>
+        gts.push( ['google_base_offer_id', '<?php echo $this->getGoogleBaseOfferId() ?>'] );
+    <?php endif; ?>
 
-    gts.push( ['google_base_subaccount_id', '<?php echo $this->escapeHtml( $this->getGoogleBaseSubaccountId() ) ?>'] );
+    <?php if( $this->getGoogleBaseSubaccountId() ) : ?>
+        gts.push( ['google_base_subaccount_id', '<?php echo $this->escapeHtml( $this->getGoogleBaseSubaccountId() ) ?>'] );
+    <?php endif; ?>
 
     gts.push( ['google_base_country', '<?php echo $this->escapeHtml( $this->getGoogleBaseCountry() ) ?>'] );
 

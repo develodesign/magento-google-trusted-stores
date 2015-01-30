@@ -59,22 +59,6 @@
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</locale>
-						<google_base_offer_id translate="label" module="develo_googletrustedstores">
-							<label>Item Google Shopping Id -
-
-								Provide this field only if you submit feeds for Google Shopping.
-
-								Product ID can be found in the data feed you submit to Google Shopping through Google Merchant Center. Alternatively you can see it by clicking on a specific product in the Products tab in your Merchant center account.
-
-								If your product pages have multiple items per page, set the variable ITEM_GOOGLE_SHOPPING_ID to include the ID of the most prominent product on the current page. This integration will allow Google to more easily correlate specific products to data provided by you in connection with Google Trusted Stores.
-
-								You may delete this entire line for category pages with no prominent product(s).</label>
-							<frontend_type>text</frontend_type>
-							<sort_order>500</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</google_base_offer_id>
 						<google_base_subaccount_id translate="label" module="develo_googletrustedstores">
 							<label>Item Google Shopping Account Id -
 

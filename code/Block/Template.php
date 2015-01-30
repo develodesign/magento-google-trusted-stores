@@ -20,12 +20,15 @@ class Develo_Googletrustedstores_Block_Template extends Mage_Core_Block_Template
 
     /**
      * Get the Item Google Shopping Account Id
+     * This is the current product.
      *
      * @return mixed
      */
     public function getItemGoogleShoppingId()
     {
-        return Mage::getStoreConfig( $this->_merchantData . 'google_base_offer_id' );
+        $currentProduct = Mage::Registry( 'current_product' );
+
+        return $currentProduct ? $currentProduct->getSku() : false;
     }
 
     /**
