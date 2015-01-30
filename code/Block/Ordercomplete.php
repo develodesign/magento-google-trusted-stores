@@ -189,6 +189,16 @@ class Develo_Googletrustedstores_Block_Ordercomplete extends Develo_Googletruste
     }
 
     /**
+     * Get the order id.
+     *
+     * @return mixed
+     */
+    public function getOrderId()
+    {
+        return $this->order->getId();
+    }
+
+    /**
      * Get all the order items on the order
      *
      * @return mixed
