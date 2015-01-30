@@ -1,5 +1,4 @@
 code                                    app/code/community/Develo/Googletrustedstores/
-admin-design/layout/*                   app/design/adminhtml/default/default/layout/
 Develo_Googletrustedstores.xml          app/etc/modules/Develo_Googletrustedstores.xml
 en_US/*                                 app/locale/en_US/
 frontend/layout/*                       app/design/frontend/base/default/layout/
