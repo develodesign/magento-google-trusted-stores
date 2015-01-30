@@ -34,7 +34,7 @@ modman clone https://github.com/develodesign/magento-google-trusted-stores.git
 3. Copy the module to the correct Magento directories.
 ```
 modman deploy magento-google-trusted-stores --copy
-
+```
 ## Setup Instructions
 1. Login to your Magento admin panel.
 2. Access the modules configuration settings.
