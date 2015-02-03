@@ -124,14 +124,5 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
         return $this->getItemGoogleShoppingLanguage();
     }
 
-     /**
-     * Get Develo GTS Helper
-     *
-     * @return Develo_Googletrustedstores_Helper_Data
-     */
-    protected function getHelper()
-    {
-        return Mage::helper('develo_googletrustedstores');
-    }
 
 }

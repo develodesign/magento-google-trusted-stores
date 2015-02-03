@@ -71,7 +71,7 @@ class Develo_Googletrustedstores_Block_Template extends Mage_Core_Block_Template
      *
      * @return Develo_Googletrustedstores_Helper_Data
      */
-    protected function getHelper()
+    public function getHelper()
     {
         return Mage::helper('develo_googletrustedstores');
     }
