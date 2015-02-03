@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Develo_Googletrustedstores extension
  *
@@ -18,103 +19,109 @@
 class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletrustedstores_Block_Template
 {
 
-    private $_badgePositionRequiresContainer = 'USER_DEFINED';
+	private $_badgePositionRequiresContainer = 'USER_DEFINED';
 
-    /**
-     * Get the Merchant's store Id
-     *
-     * @return string
-     */
+	/**
+	 * Get the Merchant's store Id
+	 *
+	 * @return string
+	 */
     public function getStoreId()
     {
-        return Mage::getStoreConfig( $this->_merchantData . 'id' );
-    }
+		return $this->getGTSHelper()->getExtensionConfig(
+			Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_MERCHANT_ID
+		);
+	}
 
-    /**
-     * Get the badge position for the trusted stores badge
-     *
-     * @return string
-     */
+	/**
+	 * Get the badge position for the trusted stores badge
+	 *
+	 * @return string
+	 */
     public function getBadgePosition()
     {
-        return Mage::getStoreConfig( $this->_merchantData . 'badge_position' );
-    }
+		return $this->getGTSHelper()->getExtensionConfig(
+			Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_BADGE_POSITION
+		);
+	}
 
-    /**
-     * Does the Certified Shop Badge require a container?
-     *
-     * @return bool
-     */
+	/**
+	 * Does the Certified Shop Badge require a container?
+	 *
+	 * @return bool
+	 */
     public function requiresBadgeContainer()
     {
-        return $this->getBadgePosition() == $this->_badgePositionRequiresContainer;
-    }
+		return $this->getBadgePosition() == $this->_badgePositionRequiresContainer;
+	}
 
-    /**
-     * Get the badge container name.
-     * Will return an empty string unless badge position is user defined.
-     *
-     * @return string
-     */
+	/**
+	 * Get the badge container name.
+	 * Will return an empty string unless badge position is user defined.
+	 *
+	 * @return string
+	 */
     public function getBadgeContainer()
     {
-        return $this->requiresBadgeContainer() ?
-            Mage::getStoreConfig( $this->_merchantData . 'badge_container' ):
-            '';
-    }
+		return $this->requiresBadgeContainer() ? $this->getGTSHelper()->getExtensionConfig(
+			Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_BADGE_CONTAINER
+		) : '';
+	}
 
-    /**
-     * Get the locale string.
-     * If one is not defined will just get the magento store locale setting.
-     *
-     * @return string
-     */
+	/**
+	 * Get the locale string.
+	 * If one is not defined will just get the magento store locale setting.
+	 *
+	 * @return string
+	 */
     public function getLocale()
     {
-        $locale = Mage::getStoreConfig( $this->_merchantData . 'locale' );
+		$locale = $this->getGTSHelper()->getExtensionConfig(
+			Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_LOCALE
+		);
 
         if( ! $locale )
-            $locale = Mage::app()->getLocale()->getLocaleCode();
+			$locale = Mage::app()->getLocale()->getLocaleCode();
 
-        return $locale;
-    }
+		return $locale;
+	}
 
-    /**
-     * Get the Item Google Shopping Id
-     *
-     * @return mixed
-     */
+	/**
+	 * Get the Item Google Shopping Id
+	 *
+	 * @return mixed
+	 */
     public function getGoogleBaseOfferId()
     {
-        return $this->getItemGoogleShoppingId();
-    }
+		return $this->getItemGoogleShoppingId();
+	}
 
-    /**
-     * Get the Item Google Shopping Account Id
-     *
-     * @return mixed
-     */
+	/**
+	 * Get the Item Google Shopping Account Id
+	 *
+	 * @return mixed
+	 */
     public function getGoogleBaseSubaccountId()
     {
-        return $this->getItemGoogleShoppingAccountId();
-    }
+		return $this->getItemGoogleShoppingAccountId();
+	}
 
-    /**
-     * Get the item google shopping country
-     *
-     * @return mixed
-     */
+	/**
+	 * Get the item google shopping country
+	 *
+	 * @return mixed
+	 */
     public function getGoogleBaseCountry()
     {
-        return $this->getItemGoogleShoppingCountry();
-    }
+		return $this->getItemGoogleShoppingCountry();
+	}
 
-    /**
-     * Get the item google shopping language
-     */
+	/**
+	 * Get the item google shopping language
+	 */
     public function getGoogleBaseLanguage()
     {
-        return $this->getItemGoogleShoppingLanguage();
-    }
+		return $this->getItemGoogleShoppingLanguage();
+	}
 
 }

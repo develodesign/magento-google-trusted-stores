@@ -78,7 +78,14 @@ class Develo_Googletrustedstores_Block_Ordercomplete extends Develo_Googletruste
     private function _getEstimatedDays( $type = 'shipping' )
     {
         $today = date( $this->_dateFormat );
-        $shippingDays = Mage::getStoreConfig( 'develo_googletrustedstores/order/estimated_' . $type . '_days' );
+
+        $shippingDays = $this->getGTSHelper()->getExtensionConfig(
+
+            $type == 'shipping' ?
+                Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_ORDER_ESTIMATE_SHIPPING_DAYS:
+                Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_ORDER_ESTIMATE_DELIVERY_DAYS
+
+        );
 
         return $this->_addDays( $today, $shippingDays );
     }
@@ -190,6 +197,14 @@ class Develo_Googletrustedstores_Block_Ordercomplete extends Develo_Googletruste
      */
     public function getOrderId()
     {
+        $orderNumberOption = $this->getGTSHelper()->getExtensionConfig(
+            Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_ORDER_NUMBER_OPTION
+        );
+
+        if($orderNumberOption == 'increment_id'){
+            return $this->order->getIncrementId();
+        }
+
         return $this->order->getId();
     }
 

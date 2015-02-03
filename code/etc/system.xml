@@ -59,6 +59,26 @@
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</locale>
+						<order_number_option>
+							<label>Increment Id or Entity Id.</label>
+							<comment> <![CDATA[
+								<div style="padding:10px;background-color:#fff;border:1px solid #F00;margin-bottom:7px;">
+									Default's to `sales_flat_order`.`entity_id` (Entity ID).
+								</div>
+                                <div style="padding:10px;background-color:#fff;border:1px solid #ddd;margin-bottom:7px;">
+                                Use Order Increment ID, like: 100000001.
+                                <br/>
+                                Or Use 'Entity ID' from the database, like: 5009.
+                                </div>
+                                  ]]>
+								</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>develo_googletrustedstores/System_Config_Source_OrderNumberOption</source_model>
+							<sort_order>500</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</order_number_option>
 						<google_base_subaccount_id translate="label" module="develo_googletrustedstores">
 							<label>Item Google Shopping Account Id -
 

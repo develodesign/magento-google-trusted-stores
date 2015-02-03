@@ -16,7 +16,6 @@
  */
 class Develo_Googletrustedstores_Block_Template extends Mage_Core_Block_Template
 {
-    protected $_merchantData = 'develo_googletrustedstores/merchant_data/';
 
     /**
      * Get the Item Google Shopping Account Id
@@ -38,7 +37,9 @@ class Develo_Googletrustedstores_Block_Template extends Mage_Core_Block_Template
      */
     public function getItemGoogleShoppingAccountId()
     {
-        return Mage::getStoreConfig( $this->_merchantData . 'google_base_subaccount_id' );
+        return $this->getGTSHelper()->getExtensionConfig(
+            Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_GOOGLE_BASE_SUBACCOUNT_ID
+        );
     }
 
     /**
@@ -48,7 +49,9 @@ class Develo_Googletrustedstores_Block_Template extends Mage_Core_Block_Template
      */
     public function getItemGoogleShoppingCountry()
     {
-        return Mage::getStoreConfig( $this->_merchantData . 'google_base_country' );
+        return $this->getGTSHelper()->getExtensionConfig(
+            Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_GOOGLE_BASE_COUNTRY
+        );
     }
 
     /**
@@ -58,6 +61,18 @@ class Develo_Googletrustedstores_Block_Template extends Mage_Core_Block_Template
      */
     public function getItemGoogleShoppingLanguage()
     {
-        return Mage::getStoreConfig( $this->_merchantData . 'google_base_language' );
+        return $this->getGTSHelper()->getExtensionConfig(
+            Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_GOOGLE_BASE_LANGUAGE
+        );
+    }
+
+    /**
+     * Get Develo GTS Helper
+     *
+     * @return Develo_Googletrustedstores_Helper_Data
+     */
+    public function getGTSHelper()
+    {
+        return Mage::helper('develo_googletrustedstores');
     }
 }
