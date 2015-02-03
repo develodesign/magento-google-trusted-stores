@@ -37,7 +37,7 @@ class Develo_Googletrustedstores_Block_Template extends Mage_Core_Block_Template
      */
     public function getItemGoogleShoppingAccountId()
     {
-        return $this->getHelper()->getExtensionConfig(
+        return $this->getGTSHelper()->getExtensionConfig(
             Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_GOOGLE_BASE_SUBACCOUNT_ID
         );
     }
@@ -49,7 +49,7 @@ class Develo_Googletrustedstores_Block_Template extends Mage_Core_Block_Template
      */
     public function getItemGoogleShoppingCountry()
     {
-        return $this->getHelper()->getExtensionConfig(
+        return $this->getGTSHelper()->getExtensionConfig(
             Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_GOOGLE_BASE_COUNTRY
         );
     }
@@ -61,7 +61,7 @@ class Develo_Googletrustedstores_Block_Template extends Mage_Core_Block_Template
      */
     public function getItemGoogleShoppingLanguage()
     {
-        return $this->getHelper()->getExtensionConfig(
+        return $this->getGTSHelper()->getExtensionConfig(
             Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_GOOGLE_BASE_LANGUAGE
         );
     }
@@ -71,7 +71,7 @@ class Develo_Googletrustedstores_Block_Template extends Mage_Core_Block_Template
      *
      * @return Develo_Googletrustedstores_Helper_Data
      */
-    public function getHelper()
+    public function getGTSHelper()
     {
         return Mage::helper('develo_googletrustedstores');
     }
