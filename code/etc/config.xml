@@ -114,4 +114,11 @@
             </adminhtml>
         </routers>
     </admin>
+    <default>
+        <develo_googletrustedstores>
+            <merchant_data>
+                <order_number_option>entity_id</order_number_option>
+            </merchant_data>
+        </develo_googletrustedstores>
+    </default>
 </config>
