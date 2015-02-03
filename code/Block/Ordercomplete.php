@@ -79,17 +79,13 @@ class Develo_Googletrustedstores_Block_Ordercomplete extends Develo_Googletruste
     {
         $today = date( $this->_dateFormat );
 
-        if($type == "shipping"){
-            $shippingDays = $this->getGTSHelper()->getExtensionConfig(
-                Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_ORDER_ESTIMATE_SHIPPING_DAYS
-            );
-        }
+        $shippingDays = $this->getGTSHelper()->getExtensionConfig(
 
-        if($type == "delivery"){
-            $shippingDays = $this->getGTSHelper()->getExtensionConfig(
+            $type == 'shipping' ?
+                Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_ORDER_ESTIMATE_SHIPPING_DAYS:
                 Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_ORDER_ESTIMATE_DELIVERY_DAYS
-            );
-        }
+
+        );
 
         return $this->_addDays( $today, $shippingDays );
     }
@@ -205,7 +201,7 @@ class Develo_Googletrustedstores_Block_Ordercomplete extends Develo_Googletruste
             Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_ORDER_NUMBER_OPTION
         );
 
-        if($orderNumberOption == "increment_id"){
+        if($orderNumberOption == 'increment_id'){
             return $this->order->getIncrementId();
         }
 
@@ -281,5 +277,4 @@ class Develo_Googletrustedstores_Block_Ordercomplete extends Develo_Googletruste
     {
         return $this->_getEstimatedDays( 'delivery' );
     }
-
 }

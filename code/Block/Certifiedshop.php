@@ -15,7 +15,9 @@
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
-class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletrustedstores_Block_Template {
+
+class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletrustedstores_Block_Template
+{
 
 	private $_badgePositionRequiresContainer = 'USER_DEFINED';
 
@@ -24,7 +26,8 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
 	 *
 	 * @return string
 	 */
-	public function getStoreId() {
+    public function getStoreId()
+    {
 		return $this->getGTSHelper()->getExtensionConfig(
 			Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_MERCHANT_ID
 		);
@@ -35,7 +38,8 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
 	 *
 	 * @return string
 	 */
-	public function getBadgePosition() {
+    public function getBadgePosition()
+    {
 		return $this->getGTSHelper()->getExtensionConfig(
 			Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_BADGE_POSITION
 		);
@@ -46,7 +50,8 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
 	 *
 	 * @return bool
 	 */
-	public function requiresBadgeContainer() {
+    public function requiresBadgeContainer()
+    {
 		return $this->getBadgePosition() == $this->_badgePositionRequiresContainer;
 	}
 
@@ -56,7 +61,8 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
 	 *
 	 * @return string
 	 */
-	public function getBadgeContainer() {
+    public function getBadgeContainer()
+    {
 		return $this->requiresBadgeContainer() ? $this->getGTSHelper()->getExtensionConfig(
 			Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_BADGE_CONTAINER
 		) : '';
@@ -68,14 +74,14 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
 	 *
 	 * @return string
 	 */
-	public function getLocale() {
+    public function getLocale()
+    {
 		$locale = $this->getGTSHelper()->getExtensionConfig(
 			Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_LOCALE
 		);
 
-		if ( ! $locale ) {
+        if( ! $locale )
 			$locale = Mage::app()->getLocale()->getLocaleCode();
-		}
 
 		return $locale;
 	}
@@ -85,7 +91,8 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
 	 *
 	 * @return mixed
 	 */
-	public function getGoogleBaseOfferId() {
+    public function getGoogleBaseOfferId()
+    {
 		return $this->getItemGoogleShoppingId();
 	}
 
@@ -94,7 +101,8 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
 	 *
 	 * @return mixed
 	 */
-	public function getGoogleBaseSubaccountId() {
+    public function getGoogleBaseSubaccountId()
+    {
 		return $this->getItemGoogleShoppingAccountId();
 	}
 
@@ -103,16 +111,17 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
 	 *
 	 * @return mixed
 	 */
-	public function getGoogleBaseCountry() {
+    public function getGoogleBaseCountry()
+    {
 		return $this->getItemGoogleShoppingCountry();
 	}
 
 	/**
 	 * Get the item google shopping language
 	 */
-	public function getGoogleBaseLanguage() {
+    public function getGoogleBaseLanguage()
+    {
 		return $this->getItemGoogleShoppingLanguage();
 	}
-
 
 }
