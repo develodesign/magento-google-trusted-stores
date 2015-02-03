@@ -27,7 +27,9 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
      */
     public function getStoreId()
     {
-        return Mage::getStoreConfig( $this->_merchantData . 'id' );
+        return $this->getHelper()->getExtensionConfig(
+            Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_MERCHANT_ID
+        );
     }
 
     /**
@@ -37,7 +39,9 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
      */
     public function getBadgePosition()
     {
-        return Mage::getStoreConfig( $this->_merchantData . 'badge_position' );
+        return $this->getHelper()->getExtensionConfig(
+            Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_BADGE_POSITION
+        );
     }
 
     /**
@@ -59,8 +63,9 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
     public function getBadgeContainer()
     {
         return $this->requiresBadgeContainer() ?
-            Mage::getStoreConfig( $this->_merchantData . 'badge_container' ):
-            '';
+            $this->getHelper()->getExtensionConfig(
+            Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_BADGE_CONTAINER
+            ): '';
     }
 
     /**
@@ -71,7 +76,9 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
      */
     public function getLocale()
     {
-        $locale = Mage::getStoreConfig( $this->_merchantData . 'locale' );
+        $locale = $this->getHelper()->getExtensionConfig(
+            Develo_Googletrustedstores_Helper_Data::CONFIG_PATH_LOCALE
+        );
 
         if( ! $locale )
             $locale = Mage::app()->getLocale()->getLocaleCode();
@@ -115,6 +122,16 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
     public function getGoogleBaseLanguage()
     {
         return $this->getItemGoogleShoppingLanguage();
+    }
+
+     /**
+     * Get Develo GTS Helper
+     *
+     * @return Develo_Googletrustedstores_Helper_Data
+     */
+    protected function getHelper()
+    {
+        return Mage::helper('develo_googletrustedstores');
     }
 
 }
