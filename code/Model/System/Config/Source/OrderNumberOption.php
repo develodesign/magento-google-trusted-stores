@@ -37,7 +37,7 @@ class Develo_Googletrustedstores_Model_System_Config_Source_OrderNumberOption{
     public function toArray()
     {
         $options = array(
-	        "entity_id"      => Mage::helper('adminhtml')->__('Entity ID')
+	        "entity_id"      => Mage::helper('adminhtml')->__('Entity ID'),
 	        "increment_id"   => Mage::helper('adminhtml')->__('Increment ID')
         );
 
