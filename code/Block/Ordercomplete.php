@@ -225,7 +225,7 @@ class Develo_Googletrustedstores_Block_Ordercomplete extends Develo_Googletruste
      */
     public function getMerchantOrderDomain()
     {
-        return strstr( str_replace( 'http://', '', $this->getUrl() ), '/', true );
+        return strstr( str_replace( 'http://', '', str_replace( 'https://', '', $this->getUrl() ) ), '/', true );
     }
 
     /**
