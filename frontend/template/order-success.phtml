@@ -47,7 +47,9 @@
             <span class="gts-i-price"><?php echo $this->getPriceForItem( $item ) ?></span>
             <span class="gts-i-quantity"><?php echo $this->escapeHtml( $item->getQtyToInvoice() ) ?></span>
 
-            <span class="gts-i-prodsearch-id"><?php echo $this->escapeHtml( $item->getSku() ) ?></span>
+            <?php if( $this->getItemGoogleShoppingAccountId() ) : ?>
+                <span class="gts-i-prodsearch-id"><?php echo $this->escapeHtml( $item->getSku() ) ?></span>
+            <?php endif; ?>
 
             <?php if( $this->getItemGoogleShoppingAccountId() ) : ?>
                 <span class="gts-i-prodsearch-store-id"><?php echo $this->escapeHtml( $this->getItemGoogleShoppingAccountId() ) ?></span>
