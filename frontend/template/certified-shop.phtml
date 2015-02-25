@@ -38,9 +38,13 @@
         gts.push( ['google_base_subaccount_id', '<?php echo $this->escapeHtml( $this->getGoogleBaseSubaccountId() ) ?>'] );
     <?php endif; ?>
 
-    gts.push( ['google_base_country', '<?php echo $this->escapeHtml( $this->getGoogleBaseCountry() ) ?>'] );
+    <?php if( $this->getGoogleBaseCountry() ) : ?>
+        gts.push( ['google_base_country', '<?php echo $this->escapeHtml( $this->getGoogleBaseCountry() ) ?>'] );
+    <?php endif; ?>
 
-    gts.push( ['google_base_language', '<?php echo $this->escapeHtml( $this->getGoogleBaseLanguage() ) ?>'] );
+    <?php if( $this->getGoogleBaseLanguage() ) : ?>
+        gts.push( ['google_base_language', '<?php echo $this->escapeHtml( $this->getGoogleBaseLanguage() ) ?>'] );
+    <?php endif; ?>
 
     (function() {
         var gts = document.createElement('script');
