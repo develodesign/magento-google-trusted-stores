@@ -79,12 +79,19 @@
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</order_number_option>
+					</fields>
+				</merchant_data>
+				<googleshopping_fields>
+					<label>Google Shopping Fields</label>
+					<sort_order>10</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<comment>Provide these fields only if you submit feeds for Google Shopping.</comment>
+					<fields>		
 						<google_base_subaccount_id translate="label" module="develo_googletrustedstores">
-							<label>Item Google Shopping Account Id -
-
-								Provide this field only if you submit feeds for Google Shopping.
-
-								Account ID from Google Merchant Center. This value should match the account ID you use to submit your product data feed to Google Shopping through Google Merchant center. If you have a MCA account, use the subaccount ID associated with that product feed.</label>
+							<label>Google Merchant Center Account Id</label>
+							<comment>This value should match the account ID you use to submit your product data feed to Google Shopping through Google Merchant center. If you have a MCA account, use the subaccount ID associated with that product feed.</comment>
 							<frontend_type>text</frontend_type>
 							<sort_order>600</sort_order>
 							<show_in_default>1</show_in_default>
@@ -92,15 +99,8 @@
 							<show_in_store>1</show_in_store>
 						</google_base_subaccount_id>
 						<google_base_country translate="label" module="develo_googletrustedstores">
-							<label>Item Google Shopping Country -
-
-								Provide this field only if you submit feeds for Google Shopping.
-
-								Account country from Google Shopping. This value should match the account country you use to submit your product data feed to Google Shopping.
-
-								The value of the country parameter should be a two-letter ISO 3166 country code.
-
-								For example, values could be “US”, “GB”, “AU”, “FR”, “DE”, “JP”.</label>
+							<label>Google Shopping Country</label>
+							<comment>This value should match the account country you use to submit your product data feed to Google Shopping. The value of the country parameter should be a two-letter ISO 3166 country code. For example, values could be "US", "GB", "AU", "FR".</comment>
 							<frontend_type>text</frontend_type>
 							<sort_order>700</sort_order>
 							<show_in_default>1</show_in_default>
@@ -108,13 +108,8 @@
 							<show_in_store>1</show_in_store>
 						</google_base_country>
 						<google_base_language translate="label" module="develo_googletrustedstores">
-							<label>Provide this field only if you submit feeds for Google Shopping.
-
-								Account language from Google Shopping. This value should match the account language you use to submit your product data feed to Google Shopping.
-
-								The value of the language parameter should be a two-letter ISO 639-1 language code.
-
-								For example, values could be "en", "fr", "de", "ja".</label>
+							<label>Account language from Google Shopping.</label>
+							<comment>This value should match the account language you use to submit your product data feed to Google Shopping. The value of the language parameter should be a two-letter ISO 639-1 language code. For example, values could be "en", "fr", "de".</comment>
 							<frontend_type>text</frontend_type>
 							<sort_order>800</sort_order>
 							<show_in_default>1</show_in_default>
@@ -122,7 +117,7 @@
 							<show_in_store>1</show_in_store>
 						</google_base_language>
 					</fields>
-				</merchant_data>
+				</googleshopping_fields>
 				<order translate="label" module="develo_googletrustedstores">
 					<label>Order Information</label>
 					<sort_order>20</sort_order>
