@@ -96,12 +96,6 @@
                 </Develo_Googletrustedstores>
             </modules>
         </translate>
-        <global_search>
-            <googlemerchantdata>
-                <class>develo_googletrustedstores/adminhtml_search_googlemerchantdata</class>
-                <acl>develo_googletrustedstores</acl>
-            </googlemerchantdata>
-        </global_search>
     </adminhtml>
     <admin>
         <routers>
