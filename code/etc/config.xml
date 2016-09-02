@@ -112,6 +112,7 @@
         <develo_googletrustedstores>
             <merchant_data>
                 <order_number_option>entity_id</order_number_option>
+                <badge_position>BOTTOM_RIGHT</badge_position>
             </merchant_data>
         </develo_googletrustedstores>
     </default>
