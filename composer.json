@@ -1,0 +1,16 @@
+{
+  "name": "develo/google-trusted-stores",
+  "type": "magento-module",
+  "description": "A simple Google Trusted Stores integration.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Develo Design",
+      "homepage": "http://www.develodesign.co.uk/",
+      "email": "info@develodesign.co.uk"
+    }
+  ],
+  "require": {
+    "magento-hackathon/magento-composer-installer": "*"
+  }
+}

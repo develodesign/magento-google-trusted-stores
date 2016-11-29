@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Develo_Googletrustedstores extension
  *

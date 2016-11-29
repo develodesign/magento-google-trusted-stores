@@ -15,7 +15,6 @@
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
-
 class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletrustedstores_Block_Template
 {
 
@@ -123,5 +122,4 @@ class Develo_Googletrustedstores_Block_Certifiedshop extends Develo_Googletruste
     {
 		return $this->getItemGoogleShoppingLanguage();
 	}
-
 }

@@ -1,67 +1,82 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
+/**
+ * Develo_Googletrustedstores extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ *
+ * @category       Develo
+ * @package        Develo_Googletrustedstores
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
 -->
 <config>
-	<tabs>
-		<develo translate="label" module="develo_googletrustedstores">
-			<label>Develo</label>
-			<sort_order>2000</sort_order>
-		</develo>
-	</tabs>
-	<sections>
-		<develo_googletrustedstores translate="label" module="develo_googletrustedstores">
-			<class>separator-top</class>
-			<label>Google Trusted Stores</label>
-			<tab>develo</tab>
-			<frontend_type>text</frontend_type>
-			<sort_order>50</sort_order>
-			<show_in_default>1</show_in_default>
-			<show_in_website>1</show_in_website>
-			<show_in_store>1</show_in_store>
-			<groups>
-				<merchant_data translate="label" module="develo_googletrustedstores">
-					<label>Merchant Data</label>
-					<sort_order>10</sort_order>
-					<show_in_default>1</show_in_default>
-					<show_in_website>1</show_in_website>
-					<show_in_store>1</show_in_store>
-					<fields>
-						<id translate="label" module="develo_googletrustedstores">
-							<label>Store Id</label>
-							<frontend_type>text</frontend_type>
-							<sort_order>100</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</id>
-						<badge_position translate="label" module="develo_googletrustedstores">
-							<label>Badge Position</label>
-							<frontend_type>select</frontend_type>
-							<source_model>develo_googletrustedstores/badgeposition</source_model>
-							<sort_order>200</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</badge_position>
-						<badge_container translate="label" module="develo_googletrustedstores">
-							<label>Badge Container (Required if badge position is USER_DEFINED)</label>
-							<frontend_type>text</frontend_type>
-							<sort_order>300</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</badge_container>
-						<locale translate="label" module="develo_googletrustedstores">
-							<label>Locale - Leave blank if you want Magento to define this value.</label>
-							<frontend_type>text</frontend_type>
-							<sort_order>400</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</locale>
-						<order_number_option>
-							<label>Increment Id or Entity Id.</label>
-							<comment> <![CDATA[
+    <tabs>
+        <develo translate="label" module="develo_googletrustedstores">
+            <label>Develo</label>
+            <sort_order>2000</sort_order>
+        </develo>
+    </tabs>
+    <sections>
+        <develo_googletrustedstores translate="label" module="develo_googletrustedstores">
+            <class>separator-top</class>
+            <label>Google Trusted Stores</label>
+            <tab>develo</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>50</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <merchant_data translate="label" module="develo_googletrustedstores">
+                    <label>Merchant Data</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <id translate="label" module="develo_googletrustedstores">
+                            <label>Store Id</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </id>
+                        <badge_position translate="label" module="develo_googletrustedstores">
+                            <label>Badge Position</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>develo_googletrustedstores/adminhtml_system_config_source_badgeposition</source_model>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </badge_position>
+                        <badge_container translate="label" module="develo_googletrustedstores">
+                            <label>Badge Container (Required if badge position is USER_DEFINED)</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </badge_container>
+                        <locale translate="label" module="develo_googletrustedstores">
+                            <label>Locale - Leave blank if you want Magento to define this value.</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>400</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </locale>
+                        <order_number_option>
+                            <label>Increment Id or Entity Id.</label>
+                            <comment> <![CDATA[
 								<div style="padding:10px;background-color:#fff;border:1px solid #F00;margin-bottom:7px;">
 									Default's to `sales_flat_order`.`entity_id` (Entity ID).
 								</div>
@@ -71,81 +86,81 @@
                                 Or Use 'Entity ID' from the database, like: 5009.
                                 </div>
                                   ]]>
-								</comment>
-							<frontend_type>select</frontend_type>
-							<source_model>develo_googletrustedstores/System_Config_Source_OrderNumberOption</source_model>
-							<sort_order>500</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</order_number_option>
-					</fields>
-				</merchant_data>
-				<googleshopping_fields>
-					<label>Google Shopping Fields</label>
-					<sort_order>10</sort_order>
-					<show_in_default>1</show_in_default>
-					<show_in_website>1</show_in_website>
-					<show_in_store>1</show_in_store>
-					<comment>Provide these fields only if you submit feeds for Google Shopping.</comment>
-					<fields>		
-						<google_base_subaccount_id translate="label" module="develo_googletrustedstores">
-							<label>Google Merchant Center Account Id</label>
-							<comment>This value should match the account ID you use to submit your product data feed to Google Shopping through Google Merchant center. If you have a MCA account, use the subaccount ID associated with that product feed.</comment>
-							<frontend_type>text</frontend_type>
-							<sort_order>600</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</google_base_subaccount_id>
-						<google_base_country translate="label" module="develo_googletrustedstores">
-							<label>Google Shopping Country</label>
-							<comment>This value should match the account country you use to submit your product data feed to Google Shopping. The value of the country parameter should be a two-letter ISO 3166 country code. For example, values could be "US", "GB", "AU", "FR".</comment>
-							<frontend_type>text</frontend_type>
-							<sort_order>700</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</google_base_country>
-						<google_base_language translate="label" module="develo_googletrustedstores">
-							<label>Account language from Google Shopping.</label>
-							<comment>This value should match the account language you use to submit your product data feed to Google Shopping. The value of the language parameter should be a two-letter ISO 639-1 language code. For example, values could be "en", "fr", "de".</comment>
-							<frontend_type>text</frontend_type>
-							<sort_order>800</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</google_base_language>
-					</fields>
-				</googleshopping_fields>
-				<order translate="label" module="develo_googletrustedstores">
-					<label>Order Information</label>
-					<sort_order>20</sort_order>
-					<show_in_default>1</show_in_default>
-					<show_in_website>1</show_in_website>
-					<show_in_store>1</show_in_store>
-					<fields>
-						<estimated_shipping_days>
-							<label>Estimated Shipping Time (Days)</label>
-							<frontend_type>select</frontend_type>
-							<source_model>develo_googletrustedstores/shipping</source_model>
-							<sort_order>100</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</estimated_shipping_days>
-						<estimated_delivery_days>
-							<label>Estimated Delivery Time (Days)</label>
-							<frontend_type>select</frontend_type>
-							<source_model>develo_googletrustedstores/shipping</source_model>
-							<sort_order>100</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_website>1</show_in_website>
-							<show_in_store>1</show_in_store>
-						</estimated_delivery_days>
-					</fields>
-				</order>
-			</groups>
-		</develo_googletrustedstores>
-	</sections>
+                            </comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>develo_googletrustedstores/adminhtml_system_config_source_ordernumberoption</source_model>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </order_number_option>
+                    </fields>
+                </merchant_data>
+                <googleshopping_fields>
+                    <label>Google Shopping Fields</label>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>Provide these fields only if you submit feeds for Google Shopping.</comment>
+                    <fields>
+                        <google_base_subaccount_id translate="label" module="develo_googletrustedstores">
+                            <label>Google Merchant Center Account Id</label>
+                            <comment>This value should match the account ID you use to submit your product data feed to Google Shopping through Google Merchant center. If you have a MCA account, use the subaccount ID associated with that product feed.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>600</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </google_base_subaccount_id>
+                        <google_base_country translate="label" module="develo_googletrustedstores">
+                            <label>Google Shopping Country</label>
+                            <comment>This value should match the account country you use to submit your product data feed to Google Shopping. The value of the country parameter should be a two-letter ISO 3166 country code. For example, values could be "US", "GB", "AU", "FR".</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>700</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </google_base_country>
+                        <google_base_language translate="label" module="develo_googletrustedstores">
+                            <label>Account language from Google Shopping.</label>
+                            <comment>This value should match the account language you use to submit your product data feed to Google Shopping. The value of the language parameter should be a two-letter ISO 639-1 language code. For example, values could be "en", "fr", "de".</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>800</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </google_base_language>
+                    </fields>
+                </googleshopping_fields>
+                <order translate="label" module="develo_googletrustedstores">
+                    <label>Order Information</label>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <estimated_shipping_days>
+                            <label>Estimated Shipping Time (Days)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>develo_googletrustedstores/adminhtml_system_config_source_shipping</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </estimated_shipping_days>
+                        <estimated_delivery_days>
+                            <label>Estimated Delivery Time (Days)</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>develo_googletrustedstores/adminhtml_system_config_source_shipping</source_model>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </estimated_delivery_days>
+                    </fields>
+                </order>
+            </groups>
+        </develo_googletrustedstores>
+    </sections>
 </config>

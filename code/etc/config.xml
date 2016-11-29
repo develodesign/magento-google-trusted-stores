@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
  * Develo_Googletrustedstores extension
@@ -22,6 +22,19 @@
             <version>1.0.0</version>
         </Develo_Googletrustedstores>
     </modules>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <Develo_Googletrustedstores>
+                    <files>
+                        <default>Develo_Googletrustedstores.csv</default>
+                    </files>
+                </Develo_Googletrustedstores>
+            </modules>
+        </translate>
+    </adminhtml>
+
     <global>
         <blocks>
             <develo_googletrustedstores>
@@ -36,21 +49,10 @@
         <models>
             <develo_googletrustedstores>
                 <class>Develo_Googletrustedstores_Model</class>
-                <resourceModel>develo_googletrustedstores_resource</resourceModel>
             </develo_googletrustedstores>
-            <develo_googletrustedstores_resource>
-                <class>Develo_Googletrustedstores_Model_Resource</class>
-                <entities>
-                    <googlemerchantdata>
-                        <table>develo_googletrustedstores_googlemerchantdata</table>
-                    </googlemerchantdata>
-                    <googlemerchantdata_store>
-                        <table>develo_googletrustedstores_googlemerchantdata_store</table>
-                    </googlemerchantdata_store>
-                </entities>
-            </develo_googletrustedstores_resource>
         </models>
     </global>
+
     <frontend>
         <layout>
             <updates>
@@ -60,54 +62,7 @@
             </updates>
         </layout>
     </frontend>
-    <adminhtml>
-        <acl>
-            <resources>
-                <admin>
-                    <children>
-                        <system>
-                            <children>
-                                <config>
-                                    <children>
-                                        <develo_googletrustedstores>
-                                            <title>Google Trusted Stores</title>
-                                        </develo_googletrustedstores>
-                                    </children>
-                                </config>
-                            </children>
-                        </system>
-                    </children>
-                </admin>
-            </resources>
-        </acl>
-        <layout>
-            <updates>
-                <develo_googletrustedstores>
-                    <file>develo_googletrustedstores.xml</file>
-                </develo_googletrustedstores>
-            </updates>
-        </layout>
-        <translate>
-            <modules>
-                <Develo_Googletrustedstores>
-                    <files>
-                        <default>Develo_Googletrustedstores.csv</default>
-                    </files>
-                </Develo_Googletrustedstores>
-            </modules>
-        </translate>
-    </adminhtml>
-    <admin>
-        <routers>
-            <adminhtml>
-                <args>
-                    <modules>
-                        <Develo_Googletrustedstores before="Mage_Adminhtml">Develo_Googletrustedstores_Adminhtml</Develo_Googletrustedstores>
-                    </modules>
-                </args>
-            </adminhtml>
-        </routers>
-    </admin>
+
     <default>
         <develo_googletrustedstores>
             <merchant_data>

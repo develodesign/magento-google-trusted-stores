@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Develo_Googletrustedstores extension
  *
@@ -14,8 +15,9 @@
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
-class Develo_Googletrustedstores_Model_Badgeposition
+class Develo_GoogletrustedStores_Model_Adminhtml_System_Config_Source_Shipping
 {
+    private $_maxDays = 10;
 
     /**
      * Get all valid options as an array
@@ -24,26 +26,16 @@ class Develo_Googletrustedstores_Model_Badgeposition
      */
     public function toOptionArray()
     {
-        return array(
+        $timeOptions = array();
 
-            array(
+        for( $i = 1; $i <= $this->_maxDays; $i++ )
+        {
+            $timeOptions[] = array(
 
-                'label' => Mage::helper('develo_googletrustedstores')->__('Bottom Right'),
-                'value' => 'BOTTOM_RIGHT'
-            ),
-
-            array(
-
-                'label' => Mage::helper('develo_googletrustedstores')->__('Bottom Left'),
-                'value' => 'BOTTOM_LEFT'
-            ),
-
-            array(
-
-                'label' => Mage::helper('develo_googletrustedstores')->__('User Defined'),
-                'value' => 'USER_DEFINED'
-            ),
-        );
+                'label' => Mage::helper('develo_googletrustedstores')->__( $i . ' days' ),
+                'value' => $i
+            );
+        }
+        return $timeOptions;
     }
-
 }
