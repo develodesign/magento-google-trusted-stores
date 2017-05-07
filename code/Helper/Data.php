@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Develo_Googletrustedstores extension
  *
@@ -14,16 +15,8 @@
  * @copyright      Copyright (c) 2015
  * @license        http://opensource.org/licenses/mit-license.php MIT License
  */
-/**
- * Googletrustedstores default helper
- *
- * @category    Develo
- * @package     Develo_Googletrustedstores
- * @author      Ultimate Module Creator
- */
 class Develo_Googletrustedstores_Helper_Data extends Mage_Core_Helper_Abstract
 {
-
 	const CONFIG_PATH_PARENT                        = "develo_googletrustedstores/";
 	const CONFIG_PATH_MERCHANT_ID                   = "develo_googletrustedstores/merchant_data/id";
 	const CONFIG_PATH_BADGE_POSITION                = "develo_googletrustedstores/merchant_data/badge_position";
@@ -35,7 +28,6 @@ class Develo_Googletrustedstores_Helper_Data extends Mage_Core_Helper_Abstract
 	const CONFIG_PATH_GOOGLE_BASE_LANGUAGE          = "develo_googletrustedstores/googleshopping_fields/google_base_language";
 	const CONFIG_PATH_ORDER_ESTIMATE_SHIPPING_DAYS  = "develo_googletrustedstores/order/estimated_shipping_days";
 	const CONFIG_PATH_ORDER_ESTIMATE_DELIVERY_DAYS  = "develo_googletrustedstores/order/estimated_delivery_days";
-
 
 	/**
 	 * Fetch Extension Config Value
